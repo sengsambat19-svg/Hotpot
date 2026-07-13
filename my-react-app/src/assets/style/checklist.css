@@ -1,0 +1,13 @@
+.check{width:26px;height:26px;border-radius:8px;border:2px solid #e5e7eb; display:inline-flex;align-items:center;justify-content:center; background:#fff;}
+  .check.checked{background:var(--brand); border-color:var(--brand); color:#fff;}
+  .item{display:flex; align-items:center; gap:16px; padding:16px 0; border-bottom:1px solid var(--line);}
+  .item:last-child{border-bottom:none;}
+  .item-thumb{width:56px;height:56px;border-radius:14px; object-fit:cover;}
+  .tag{font-size:.72rem; font-weight:700; letter-spacing:.04em; padding:5px 10px; border-radius:999px; text-transform:uppercase;}
+  .tag-protein{background:#fdecef;color:var(--brand);}
+  .tag-spicy{background:#fdecef;color:var(--brand);}
+  .tag-veg{background:#e8f7ee;color:#128a3b;}
+  .tag-vegan{background:#eef7e8;color:#3a8a12;}
+  .strike{text-decoration:line-through; color:#9ca3af;}
+  .note{background:#fdecef; color:var(--brand); border-radius:14px; padding:14px 18px; font-weight:500;}
+  .items-total{background:#fdecef;color:var(--brand); border-radius:999px; padding:6px 14px; font-size:.8rem; font-weight:600;}
