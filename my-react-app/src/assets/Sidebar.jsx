@@ -1,14 +1,17 @@
+import { useSide } from "../ContextSidebar";
 import  "./style/sidebar.css";
 
 const Sidebar = () => {
+  const [tab,settab]=useSide();
+  console.log(tab)
   return (
     
   <aside className="sidebar">
     <div className="brand">RedPot Express</div>
     <div className="brand-sub">Downtown Branch</div>
 
-    <div className="nav-item active"><i className="bi bi-receipt"></i><span>Orders</span></div>
-    <div className="nav-item"><i className="bi bi-tools"></i><span>Menu Management</span></div>
+    <div className="nav-item active" onClick={()=>settab(0)}><i className="bi bi-receipt"></i><span>Orders</span></div>
+    <div className="nav-item" onClick={()=>settab(1)}><i className="bi bi-tools" ></i><span>Menu Management</span></div>
     <div className="nav-item"><i className="bi bi-shop"></i><span>Store Settings</span></div>
     <div className="nav-item"><i className="bi bi-bar-chart"></i><span>Analytics</span></div>
 
