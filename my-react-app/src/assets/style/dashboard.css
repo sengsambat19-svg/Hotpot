@@ -1,0 +1,211 @@
+/* ==========================================================================
+   Dashboard.css
+   ========================================================================== */
+
+.sh-main {
+  margin-left: var(--sidebar-width);
+  margin-top: var(--topbar-height);
+  padding: 28px 32px;
+  background: var(--sh-bg);
+  min-height: calc(100vh - var(--topbar-height));
+}
+
+.sh-subtitle {
+  color: var(--sh-text-muted);
+  font-size: 0.88rem;
+}
+
+.sh-text-muted {
+  color: var(--sh-text-muted);
+}
+
+/* ---------------- Generic card ---------------- */
+.sh-card {
+  background: #fff;
+  border: 1px solid var(--sh-border);
+  border-radius: 14px;
+}
+
+/* ---------------- Stat cards ---------------- */
+.sh-stat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+}
+
+.sh-stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--sh-text-muted);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.sh-stat-value {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--sh-text-dark);
+  margin-bottom: 4px;
+}
+
+.sh-stat-helper {
+  font-size: 0.82rem;
+  color: var(--sh-text-muted);
+}
+
+.sh-change-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 30px;
+}
+
+.sh-change-pill.sh-up {
+  background: #e3f8ec;
+  color: #1f9d55;
+}
+
+.sh-change-pill.sh-down {
+  background: #fde8e8;
+  color: #d23f3f;
+}
+
+.sh-badge-live {
+  font-size: 0.76rem;
+  font-weight: 600;
+  background: #e7edff;
+  color: #2f5fec;
+  padding: 4px 10px;
+  border-radius: 30px;
+}
+
+/* ---------------- Chart card ---------------- */
+.sh-legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #c8102e;
+  display: inline-block;
+}
+
+.sh-legend-label {
+  font-size: 0.85rem;
+  color: var(--sh-text-dark);
+}
+
+.sh-btn-ghost {
+  font-size: 0.82rem;
+  border-color: var(--sh-border);
+  color: var(--sh-text-dark);
+  border-radius: 8px;
+  padding: 0.4rem 0.85rem;
+}
+
+.sh-btn-ghost:hover {
+  background-color: var(--sh-bg);
+}
+
+.sh-btn-solid {
+  font-size: 0.82rem;
+  background-color: var(--sh-primary);
+  border-color: var(--sh-primary);
+  border-radius: 8px;
+  padding: 0.4rem 0.85rem;
+}
+
+.sh-btn-solid:hover {
+  background-color: var(--sh-primary-dark);
+  border-color: var(--sh-primary-dark);
+}
+
+.sh-chart-wrap {
+  height: 360px;
+  position: relative;
+}
+
+/* ---------------- Recent Sales ---------------- */
+.sh-sales-list {
+  overflow-y: auto;
+}
+
+.sh-sale-row {
+  border-bottom: 1px solid var(--sh-border);
+}
+
+.sh-sale-row:last-child {
+  border-bottom: none;
+}
+
+.sh-avatar-sm {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e7edff;
+  color: #2f5fec;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.sh-sale-name {
+  font-size: 0.88rem;
+  color: var(--sh-text-dark);
+}
+
+.sh-sale-plan {
+  font-size: 0.74rem;
+  color: var(--sh-text-muted);
+}
+
+.sh-sale-amount {
+  font-size: 0.88rem;
+  color: var(--sh-text-dark);
+}
+
+.sh-view-all {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sh-primary);
+  text-decoration: none;
+}
+
+.sh-view-all:hover {
+  color: var(--sh-primary-dark);
+}
+
+/* ---------------- Status strip ---------------- */
+.sh-status-card {
+  background: #fff;
+  border: 1px solid var(--sh-border);
+  border-radius: 12px;
+}
+
+.sh-status-icon {
+  font-size: 1.1rem;
+}
+
+.sh-status-label {
+  font-size: 0.85rem;
+  color: var(--sh-text-dark);
+}
+
+.sh-status-detail {
+  font-size: 0.76rem;
+  color: var(--sh-text-muted);
+}
+
+.sh-tone-warning .sh-status-icon { color: #e0742a; }
+.sh-tone-success .sh-status-icon { color: #1f9d55; }
+.sh-tone-info .sh-status-icon { color: #2f5fec; }
+.sh-tone-muted .sh-status-icon { color: #8a93a6; }
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 900px) {
+  .sh-main {
+    margin-left: 72px;
+  }
+}

@@ -2,26 +2,47 @@ import { useSide } from "../ContextSidebar";
 import  "./style/sidebar.css";
 
 const Sidebar = () => {
-  const [tab,settab]=useSide();
-  console.log(tab)
+  const [tab, settab] = useSide();
+
+  const navItems = [
+    { id: 0, label: "Orders", icon: "bi bi-receipt" },
+    { id: 1, label: "Menu Management", icon: "bi bi-tools" },
+    { id: 2, label: "Dashboard", icon: "bi bi-bar-chart" },
+    { id: 3, label: "User List", icon: "bi bi-person-lines-fill" },
+  ];
+
   return (
-    
-  <aside className="sidebar">
-    <div className="brand">RedPot Express</div>
-    <div className="brand-sub">Downtown Branch</div>
+    <aside className="sidebar">
+      <div className="brand">RedPot Express</div>
+      <div className="brand-sub">Downtown Branch</div>
 
-    <div className="nav-item active" onClick={()=>settab(0)}><i className="bi bi-receipt"></i><span>Orders</span></div>
-    <div className="nav-item" onClick={()=>settab(1)}><i className="bi bi-tools" ></i><span>Menu Management</span></div>
-    <div className="nav-item"><i className="bi bi-shop"></i><span>Store Settings</span></div>
-    <div className="nav-item"><i className="bi bi-bar-chart"></i><span>Analytics</span></div>
+      {navItems.map((item) => (
+        <div
+          key={item.id}
+          className={`nav-item ${tab === item.id ? "active" : ""}`}
+          onClick={() => settab(item.id)}
+        >
+          <i className={item.icon}></i>
+          <span>{item.label}</span>
+        </div>
+      ))}
 
-    <div className="sidebar-foot">
-      <button className="btn-new"><i className="bi bi-plus-lg me-1"></i> New Inventory</button>
-      <div className="help"><i className="bi bi-question-circle"></i><span>Help Support</span></div>
-    </div>
-  </aside>
- 
-  )
+      <div className="nav-item">
+        <i className="bi bi-shop"></i>
+        <span>Product Table</span>
+      </div>
+
+      <div className="sidebar-foot">
+        <button className="btn-new">
+          <i className="bi bi-plus-lg me-1"></i> New Inventory
+        </button>
+        <div className="help">
+          <i className="bi bi-question-circle"></i>
+          <span>Help Support</span>
+        </div>
+      </div>
+    </aside>
+  );
 }
 
 export default Sidebar;

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Customer Dashboard</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+<style>
+  :root{--pink:#ff2e63;--pink-soft:#ffe6ec;--ink:#2b2b3a;--muted:#a8a8b8;--line:#f0eef2;--bg:#f7f7fb;}
+  body{font-family:'Poppins',system-ui,sans-serif;background:#fff;color:var(--ink);}
+  .cd-topbar{border-bottom:1px solid var(--line);padding:18px 40px;display:flex;align-items:center;gap:24px;background:#fff;position:relative;}
+  .cd-topbar::after{content:"";position:absolute;right:0;top:0;width:4px;height:100%;background:var(--pink);}
+  .cd-select,.cd-search{background:var(--bg);border:none;border-radius:999px;padding:12px 22px;font-size:13px;color:var(--ink);outline:none;}
+  .cd-select{min-width:180px;font-weight:600;letter-spacing:.06em;}
+  .cd-search{flex:1;max-width:560px;}
+  .cd-add-link{color:var(--pink);font-weight:700;font-size:13px;letter-spacing:.04em;text-decoration:none;margin-left:auto;}
+  .cd-bell{color:var(--muted);font-size:18px;}
+  .cd-shell{padding:40px 48px;}
+  .cd-card{background:#fff;border-radius:14px;box-shadow:0 12px 40px rgba(30,20,50,.06);padding:36px 40px;}
+  .cd-title{font-size:28px;font-weight:600;margin:0;}
+  .cd-btn-filter{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 22px;font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--ink);}
+  .cd-btn-add{background:var(--pink);border:none;border-radius:999px;padding:10px 22px;font-size:12px;font-weight:600;letter-spacing:.08em;color:#fff;box-shadow:0 8px 20px rgba(255,46,99,.35);}
+  .cd-table{width:100%;border-collapse:separate;border-spacing:0 4px;margin-top:28px;}
+  .cd-table thead th{font-size:11px;letter-spacing:.12em;color:var(--muted);font-weight:600;text-transform:uppercase;padding:18px 16px;border-bottom:1px solid var(--line);background:#fbfbfd;}
+  .cd-table tbody td{padding:20px 16px;font-size:13px;color:#4a4a5c;border-bottom:1px solid var(--line);vertical-align:middle;}
+  .cd-table tbody td.cd-name{color:var(--ink);font-weight:600;}
+  .cd-chip{display:inline-block;background:var(--bg);border-radius:999px;padding:5px 14px;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#7b7b8c;margin-right:6px;}
+  .cd-chip.plus{color:var(--pink);}
+  .cd-action{width:34px;height:34px;border-radius:50%;border:none;background:var(--bg);color:var(--muted);display:inline-flex;align-items:center;justify-content:center;margin-right:8px;position:relative;}
+  .cd-action.delete-active{background:var(--pink);color:#fff;box-shadow:0 8px 18px rgba(255,46,99,.4);}
+  .cd-tooltip{position:absolute;top:-22px;right:-4px;font-size:9px;letter-spacing:.16em;color:var(--muted);font-weight:600;}
+  .cd-header-info{width:18px;height:18px;border-radius:50%;border:1px solid var(--line);color:var(--muted);font-size:10px;display:inline-flex;align-items:center;justify-content:center;margin-left:6px;}
+</style>
+</head>
+<body>
+<div class="cd-topbar">
+  <button class="cd-select" type="button">ALL CUSTOMER <span class="ms-2">▾</span></button>
+  <input class="cd-search" placeholder="🔍   Search customer" />
+  <a href="#" class="cd-add-link">+ ADD CUSTOMER</a>
+  <span class="cd-bell">🔔</span>
+</div>
+<div class="cd-shell">
+  <div class="cd-card">
+    <div class="d-flex align-items-center justify-content-between">
+      <h1 class="cd-title">Customer</h1>
+      <div class="d-flex gap-3">
+        <button class="cd-btn-filter" type="button">▽ FILTER</button>
+        <button class="cd-btn-add" type="button">⊕ ADD CUSTOMER</button>
+      </div>
+    </div>
+    <table class="cd-table">
+      <thead>
+        <tr><th>NAME ▾</th><th>PHONE</th><th>EMAIL</th><th>MODIFY ▾</th><th>TO DO ▾</th><th class="text-end">ACTION <span class="cd-header-info">i</span></th></tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+</div>
+<script>
+  const customers = [
+    {name:"Bess Goodman",phone:"364-759-3783",email:"owen.hintz@hotmail.com",modify:"27 Oct 2018",todos:["Call","Send Email","Check","+1"]},
+    {name:"Winnie Jimenez",phone:"648-333-9483",email:"benton.lueilwitz@hotmail.com",modify:"31 Jan 2018",todos:["Call","Check"]},
+    {name:"Billy Perry",phone:"514-579-9511",email:"hosea.trantow@purdy.biz",modify:"20 Apr 2018",todos:["Call","Send Email","Check","+1"]},
+    {name:"Luella Lawrence",phone:"816-448-9790",email:"ullrich_ignatius@josie.name",modify:"12 Mar 2018",todos:["Send Email"]},
+    {name:"Gary Webster",phone:"277-727-0226",email:"lempi.leannon@senger.me",modify:"17 Feb 2018",todos:[]},
+    {name:"Philip Bates",phone:"134-612-6630",email:"aida_larson@gmail.com",modify:"25 Sep 2018",todos:["Call","Check"]},
+    {name:"Jack Davidson",phone:"407-164-9834",email:"kirlin_minerva@hotmail.com",modify:"11 Mar 2018",todos:[]},
+    {name:"Lillian Lindsey",phone:"529-782-6579",email:"nikko.sipes@yahoo.com",modify:"06 Dec 2018",todos:["Call","Send Email","Check"]},
+  ];
+  const active = 3;
+  document.getElementById("rows").innerHTML = customers.map((c,i)=>`
+    <tr>
+      <td class="cd-name">${c.name}</td>
+      <td>${c.phone}</td>
+      <td>${c.email}</td>
+      <td>${c.modify}</td>
+      <td>${c.todos.map(t=>`<span class="cd-chip ${t.startsWith("+")?"plus":""}">${t}</span>`).join("")}</td>
+      <td class="text-end">
+        <button class="cd-action" type="button">✎</button>
+        <button class="cd-action ${i===active?"delete-active":""}" type="button">${i===active?'<span class="cd-tooltip">DELETE</span>':""}🗑</button>
+      </td>
+    </tr>`).join("");
+</script>
+</body>
+</html>
