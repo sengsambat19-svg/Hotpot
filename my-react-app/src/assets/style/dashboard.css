@@ -3,11 +3,9 @@
    ========================================================================== */
 
 .sh-main {
-  margin-left: var(--sidebar-width);
-  margin-top: var(--topbar-height);
   padding: 28px 32px;
   background: var(--sh-bg);
-  min-height: calc(100vh - var(--topbar-height));
+  min-height: 100vh;
 }
 
 .sh-subtitle {

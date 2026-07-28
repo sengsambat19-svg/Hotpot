@@ -9,6 +9,7 @@ const Sidebar = () => {
     { id: 1, label: "Menu Management", icon: "bi bi-tools" },
     { id: 2, label: "Dashboard", icon: "bi bi-bar-chart" },
     { id: 3, label: "User List", icon: "bi bi-person-lines-fill" },
+    { id: 4, label: "Product Table", icon: "bi bi-shop" },
   ];
 
   return (
@@ -26,11 +27,6 @@ const Sidebar = () => {
           <span>{item.label}</span>
         </div>
       ))}
-
-      <div className="nav-item">
-        <i className="bi bi-shop"></i>
-        <span>Product Table</span>
-      </div>
 
       <div className="sidebar-foot">
         <button className="btn-new">

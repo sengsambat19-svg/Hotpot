@@ -40,7 +40,7 @@ const Userlist = () => {
                 <th>NAME ▾</th>
                 <th>PHONE</th>
                 <th>EMAIL</th>
-                <th>MODIFY ▾</th>
+                
                 <th className="text-end">
                   ACTION <span className="cd-header-info">i</span>
                 </th>
@@ -50,8 +50,8 @@ const Userlist = () => {
               <tr>
                 <td className="cd-name">Bess Goodman</td>
                 <td>364-759-3783</td>
+
                 <td>owen.hintz@hotmail.com</td>
-                <td>27 Oct 2018</td>
                 <td className="text-end">
                   <button className="cd-action" type="button">✎Edit</button>
                   <button className="cd-action" type="button">🗑Delete</button>
@@ -61,7 +61,6 @@ const Userlist = () => {
                 <td className="cd-name">Bess Goodman</td>
                 <td>364-759-3783</td>
                 <td>owen.hintz@hotmail.com</td>
-                <td>27 Oct 2018</td>
                 <td className="text-end">
                   <button className="cd-action" type="button">✎Edit</button>
                   <button className="cd-action" type="button">🗑Delete</button>
@@ -71,7 +70,6 @@ const Userlist = () => {
                 <td className="cd-name">Bess Goodman</td>
                 <td>364-759-3783</td>
                 <td>owen.hintz@hotmail.com</td>
-                <td>27 Oct 2018</td>
                 <td className="text-end">
                   <button className="cd-action" type="button">✎Edit</button>
                   <button className="cd-action" type="button">🗑Delete</button>
@@ -81,7 +79,6 @@ const Userlist = () => {
                 <td className="cd-name">Bess Goodman</td>
                 <td>364-759-3783</td>
                 <td>owen.hintz@hotmail.com</td>
-                <td>27 Oct 2018</td>
                 <td className="text-end">
                   <button className="cd-action" type="button">✎Edit</button>
                   <button className="cd-action" type="button">🗑Delete</button>
@@ -91,7 +88,6 @@ const Userlist = () => {
                 <td className="cd-name">Bess Goodman</td>
                 <td>364-759-3783</td>
                 <td>owen.hintz@hotmail.com</td>
-                <td>27 Oct 2018</td>
                 <td className="text-end">
                   <button className="cd-action" type="button">✎Edit</button>
                   <button className="cd-action" type="button">🗑Delete</button>
@@ -101,7 +97,6 @@ const Userlist = () => {
                 <td className="cd-name">Bess Goodman</td>
                 <td>364-759-3783</td>
                 <td>owen.hintz@hotmail.com</td>
-                <td>27 Oct 2018</td>
                 <td className="text-end">
                   <button className="cd-action" type="button">✎Edit</button>
                   <button className="cd-action" type="button">🗑Delete</button>
@@ -111,7 +106,6 @@ const Userlist = () => {
                 <td className="cd-name">Bess Goodman</td>
                 <td>364-759-3783</td>
                 <td>owen.hintz@hotmail.com</td>
-                <td>27 Oct 2018</td>
                 <td className="text-end">
                   <button className="cd-action" type="button">✎Edit</button>
                   <button className="cd-action" type="button">🗑Delete</button>
@@ -121,7 +115,6 @@ const Userlist = () => {
                 <td className="cd-name">Bess Goodman</td>
                 <td>364-759-3783</td>
                 <td>owen.hintz@hotmail.com</td>
-                <td>27 Oct 2018</td>
                 <td className="text-end">
                   <button className="cd-action" type="button">✎Edit</button>
                   <button className="cd-action" type="button">🗑Delete</button>
@@ -172,6 +165,7 @@ const Userlist = () => {
         </div>
       )}
     </>
+    
   );
 };
 

@@ -7,6 +7,7 @@
   html,body{height:100%;}
   body{font-family:'Inter',sans-serif;background:#fff;color:var(--ink);}
   .app{display:grid;grid-template-columns:260px 1fr;min-height:100vh;}
+.content{width:100%; min-height:100vh;}
   
 .sidebar{background:#fff;
   border-right:1px solid var(--line);
