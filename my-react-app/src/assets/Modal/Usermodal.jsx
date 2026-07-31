@@ -1,4 +1,4 @@
-import "./style/usermodal.css"
+import "./usermodal.css"
 
 const Usermodal = ({ isOpen, onClose, title = "Add Customer" }) => {
   if (!isOpen) return null

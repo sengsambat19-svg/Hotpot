@@ -1,6 +1,6 @@
 import { useState } from "react"
-import "./style/menu-management.css"
-import Modal from "./Modal"
+import "./menu-management.css"
+import Modal from "../../Modal/Modal"
 
 const MenuManagement = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Usermodal from "./Usermodal";
-import "./style/Userlist.css";
+import Usermodal from "../../Modal/Usermodal";
+import "./Userlist.css";
 
 const initialCustomers = [
   { id: 1, name: "Bess Goodman", phone: "364-759-3783", email: "owen.hintz@hotmail.com" },

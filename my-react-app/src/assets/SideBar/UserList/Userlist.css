@@ -1,0 +1,115 @@
+.cd-topbar {
+  border-bottom: 1px solid var(--line);
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #fff;
+  position: relative;
+}
+.cd-topbar::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--pink);
+}
+.cd-select,
+.cd-search {
+  background: var(--bg);
+  border: none;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-size: 13px;
+  color: var(--ink);
+  outline: none;
+}
+.cd-select {
+  min-width: 180px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.cd-search {
+  flex: 1;
+  max-width: 560px;
+}
+.cd-add-link {
+  color: var(--pink);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  margin-left: auto;
+  width: 150px;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+}
+.cd-bell {
+  color: var(--muted);
+  font-size: 18px;
+}
+.cd-shell {
+  padding: 24px 0 0;
+  width: 100%;
+  min-height: calc(100vh - 130px);
+  box-sizing: border-box;
+}
+.cd-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(30, 20, 50, 0.06);
+  padding: 36px 40px;
+  width: 100%;
+  min-height: calc(100vh - 180px);
+  box-sizing: border-box;
+}
+.cd-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+}
+.cd-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 4px;
+  margin-top: 28px;
+}
+.cd-table thead th {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 18px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #fbfbfd;
+}
+.cd-table tbody td {
+  padding: 20px 16px;
+  font-size: 13px;
+  color: #4a4a5c;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+.cd-table tbody td.cd-name {
+  color: var(--ink);
+  font-weight: 600;
+}
+.cd-action {
+  width: 75px;
+  height: 35px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  background: var(--bg);
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}

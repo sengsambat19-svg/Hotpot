@@ -1,15 +1,15 @@
-import { useSide } from "../ContextSidebar";
-import  "./style/sidebar.css";
+import { useSide } from "../../ContextSidebar";
+import  "./sidebar.css";
 
 const Sidebar = () => {
   const [tab, settab] = useSide();
 
   const navItems = [
-    { id: 0, label: "Orders", icon: "bi bi-receipt" },
-    { id: 1, label: "Menu Management", icon: "bi bi-tools" },
     { id: 2, label: "Dashboard", icon: "bi bi-bar-chart" },
-    { id: 3, label: "User List", icon: "bi bi-person-lines-fill" },
+    { id: 1, label: "Menu Management", icon: "bi bi-tools" },
     { id: 4, label: "Product Table", icon: "bi bi-shop" },
+    { id: 0, label: "Orders", icon: "bi bi-receipt" },
+    { id: 3, label: "User List", icon: "bi bi-person-lines-fill" }
   ];
 
   return (
