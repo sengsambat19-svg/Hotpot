@@ -1,7 +1,18 @@
 import { useState } from "react";
+import Usermodal from "./Usermodal";
 import "./style/Userlist.css";
 
+const initialCustomers = [
+  { id: 1, name: "Bess Goodman", phone: "364-759-3783", email: "owen.hintz@hotmail.com" },
+  { id: 2, name: "Mina Patel", phone: "214-555-0199", email: "mina.patel@gmail.com" },
+  { id: 3, name: "Noah Kim", phone: "310-555-0147", email: "noah.kim@yahoo.com" },
+  { id: 4, name: "Ava Thompson", phone: "646-555-0128", email: "ava.thompson@mail.com" },
+  { id: 5, name: "Liam Brooks", phone: "415-555-0182", email: "liam.brooks@outlook.com" },
+];
+
 const Userlist = () => {
+  const [customers, setCustomers] = useState(initialCustomers);
+  const [searchTerm, setSearchTerm] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalTitle, setModalTitle] = useState("Add Customer");
 
@@ -10,13 +21,31 @@ const Userlist = () => {
     setIsModalOpen(true);
   };
 
+  const handleDelete = (id) => {
+    setCustomers((prevCustomers) => prevCustomers.filter((customer) => customer.id !== id));
+  };
+
+  const filteredCustomers = customers.filter((customer) => {
+    const term = searchTerm.toLowerCase();
+    return (
+      customer.name.toLowerCase().includes(term) ||
+      customer.phone.toLowerCase().includes(term) ||
+      customer.email.toLowerCase().includes(term)
+    );
+  });
+
   return (
     <>
       <div className="cd-topbar">
         <button className="cd-select" type="button">
           ALL CUSTOMER <span className="ms-2">▾</span>
         </button>
-        <input className="cd-search" placeholder="🔍   Search customer" />
+        <input
+          className="cd-search"
+          placeholder="🔍   Search customer"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
         <button className="cd-add-link bg-danger" type="button" onClick={() => openModal("Add Customer")}>+ ADD CUSTOMER</button>
         <span className="cd-bell">🔔</span>
       </div>
@@ -27,145 +56,36 @@ const Userlist = () => {
             <h1 className="cd-title">Customer</h1>
           </div>
 
-          <table
-            className="cd-table"
-            onClick={(e) => {
-              if (e.target.closest("button.cd-action")) {
-                openModal("Edit Customer");
-              }
-            }}
-          >
+          <table className="cd-table">
             <thead>
               <tr>
                 <th>NAME ▾</th>
                 <th>PHONE</th>
                 <th>EMAIL</th>
-                
                 <th className="text-end">
                   ACTION <span className="cd-header-info">i</span>
                 </th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td className="cd-name">Bess Goodman</td>
-                <td>364-759-3783</td>
-
-                <td>owen.hintz@hotmail.com</td>
-                <td className="text-end">
-                  <button className="cd-action" type="button">✎Edit</button>
-                  <button className="cd-action" type="button">🗑Delete</button>
-                </td>
-              </tr>
-               <tr>
-                <td className="cd-name">Bess Goodman</td>
-                <td>364-759-3783</td>
-                <td>owen.hintz@hotmail.com</td>
-                <td className="text-end">
-                  <button className="cd-action" type="button">✎Edit</button>
-                  <button className="cd-action" type="button">🗑Delete</button>
-                </td>
-              </tr>
-               <tr>
-                <td className="cd-name">Bess Goodman</td>
-                <td>364-759-3783</td>
-                <td>owen.hintz@hotmail.com</td>
-                <td className="text-end">
-                  <button className="cd-action" type="button">✎Edit</button>
-                  <button className="cd-action" type="button">🗑Delete</button>
-                </td>
-              </tr>
-               <tr>
-                <td className="cd-name">Bess Goodman</td>
-                <td>364-759-3783</td>
-                <td>owen.hintz@hotmail.com</td>
-                <td className="text-end">
-                  <button className="cd-action" type="button">✎Edit</button>
-                  <button className="cd-action" type="button">🗑Delete</button>
-                </td>
-              </tr>
-               <tr>
-                <td className="cd-name">Bess Goodman</td>
-                <td>364-759-3783</td>
-                <td>owen.hintz@hotmail.com</td>
-                <td className="text-end">
-                  <button className="cd-action" type="button">✎Edit</button>
-                  <button className="cd-action" type="button">🗑Delete</button>
-                </td>
-              </tr>
-               <tr>
-                <td className="cd-name">Bess Goodman</td>
-                <td>364-759-3783</td>
-                <td>owen.hintz@hotmail.com</td>
-                <td className="text-end">
-                  <button className="cd-action" type="button">✎Edit</button>
-                  <button className="cd-action" type="button">🗑Delete</button>
-                </td>
-              </tr>
-               <tr>
-                <td className="cd-name">Bess Goodman</td>
-                <td>364-759-3783</td>
-                <td>owen.hintz@hotmail.com</td>
-                <td className="text-end">
-                  <button className="cd-action" type="button">✎Edit</button>
-                  <button className="cd-action" type="button">🗑Delete</button>
-                </td>
-              </tr>
-               <tr>
-                <td className="cd-name">Bess Goodman</td>
-                <td>364-759-3783</td>
-                <td>owen.hintz@hotmail.com</td>
-                <td className="text-end">
-                  <button className="cd-action" type="button">✎Edit</button>
-                  <button className="cd-action" type="button">🗑Delete</button>
-                </td>
-              </tr>
-              
-             
-             
+              {filteredCustomers.map((customer) => (
+                <tr key={customer.id}>
+                  <td className="cd-name">{customer.name}</td>
+                  <td>{customer.phone}</td>
+                  <td>{customer.email}</td>
+                  <td className="text-end">
+                    <button className="cd-action" type="button" onClick={() => openModal("Edit Customer")}>✎Edit</button>
+                    <button className="cd-action" type="button" onClick={() => handleDelete(customer.id)}>🗑Delete</button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
       </div>
 
-      {isModalOpen && (
-        <div className="cd-modal-overlay" onClick={() => setIsModalOpen(false)}>
-          <div className="cd-modal" onClick={(e) => e.stopPropagation()}>
-            <div className="cd-modal-header">
-              <h3>{modalTitle}</h3>
-              <button className="cd-modal-close" type="button" onClick={() => setIsModalOpen(false)}>
-                ×
-              </button>
-            </div>
-
-            <div className="cd-modal-body">
-              <label>
-                Name
-                <input type="text" placeholder="Enter customer name" />
-              </label>
-              <label>
-                Phone
-                <input type="text" placeholder="Enter phone number" />
-              </label>
-              <label>
-                Email
-                <input type="email" placeholder="Enter email" />
-              </label>
-            </div>
-
-            <div className="cd-modal-footer">
-              <button className="cd-btn-cancel" type="button" onClick={() => setIsModalOpen(false)}>
-                Cancel
-              </button>
-              <button className="cd-btn-save" type="button">
-                Save
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <Usermodal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={modalTitle} />
     </>
-    
   );
 };
 

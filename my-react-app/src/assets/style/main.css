@@ -95,6 +95,9 @@ body {
 /* Content */
 .content {
   padding: 8px 40px 120px;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 .h-orders {
   font-size: 38px;

@@ -1,7 +1,12 @@
+import { useState } from "react"
 import "./style/menu-management.css"
+import Modal from "./Modal"
 
 const MenuManagement = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
+    <>
     <main className="menu-management-page py-4 px-4 px-lg-5">
 
   <div className="d-flex align-items-center justify-content-between mb-4 gap-3">
@@ -22,7 +27,7 @@ const MenuManagement = () => {
       <h1 className="page-title mb-1">Menu Management</h1>
       <div className="text-muted">Manage your inventory, pricing, and availability.</div>
     </div>
-    <button className="btn-brand"><i className="bi bi-plus-lg me-1"></i> Add New Item</button>
+    <button className="btn-brand" onClick={() => setIsModalOpen(true)}><i className="bi bi-plus-lg me-1"></i> Add New Item</button>
   </div>
 
 
@@ -128,6 +133,8 @@ const MenuManagement = () => {
   </div>
 </main>
 
+    <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   )
 }
 
