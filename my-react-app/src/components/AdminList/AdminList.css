@@ -1,0 +1,125 @@
+.page-users {
+  padding: 0;
+  background: var(--bg);
+}
+
+.ul-topbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 40px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.ul-select {
+  background: var(--bg);
+  border: none;
+  border-radius: 999px;
+  padding: 11px 22px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.ul-search-wrap {
+  flex: 1;
+  max-width: 480px;
+  position: relative;
+}
+
+.ul-search-wrap i {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.ul-search {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 11px 18px 11px 42px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.ul-search:focus {
+  border-color: var(--brand);
+  background: #fff;
+}
+
+.ul-card {
+  margin: 24px 40px;
+  padding: 32px 36px;
+  border-radius: var(--r-md);
+}
+
+.ul-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 24px;
+}
+
+.ul-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.ul-table thead th {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+  background: #fbfbfd;
+  text-align: left;
+}
+
+.ul-table tbody td {
+  padding: 18px 16px;
+  font-size: 0.9rem;
+  color: #4a4a5c;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+
+.ul-table tbody td.ul-name {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.ul-action {
+  border: none;
+  background: var(--bg);
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-radius: 10px;
+  padding: 8px 14px;
+  margin-right: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ul-action:hover {
+  color: var(--brand);
+}
+
+.ul-action.danger:hover {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+@media (max-width: 700px) {
+  .ul-topbar { flex-wrap: wrap; padding: 16px 20px; }
+  .ul-card { margin: 16px 20px; padding: 20px; }
+}

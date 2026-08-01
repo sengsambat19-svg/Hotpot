@@ -1,0 +1,110 @@
+.sh-subtitle {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.sh-stat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.sh-stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.sh-stat-value {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.sh-change-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 30px;
+}
+
+.sh-change-pill.sh-up {
+  background: #e3f8ec;
+  color: #1f9d55;
+}
+
+.sh-change-pill.sh-down {
+  background: #fde8e8;
+  color: #d23f3f;
+}
+
+.sh-badge-live {
+  font-size: 0.76rem;
+  font-weight: 600;
+  background: #e7edff;
+  color: #2f5fec;
+  padding: 4px 10px;
+  border-radius: 30px;
+}
+
+.sh-legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--brand);
+  display: inline-block;
+}
+
+.sh-legend-label {
+  font-size: 0.85rem;
+  color: var(--ink);
+}
+
+.sh-chart-wrap {
+  height: 320px;
+  position: relative;
+}
+
+.sh-sales-list {
+  overflow-y: auto;
+}
+
+.sh-sale-row {
+  border-bottom: 1px solid var(--line);
+}
+
+.sh-sale-row:last-child {
+  border-bottom: none;
+}
+
+.sh-avatar-sm {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e7edff;
+  color: #2f5fec;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sh-sale-name {
+  font-size: 0.88rem;
+  color: var(--ink);
+}
+
+.sh-sale-plan {
+  font-size: 0.74rem;
+  color: var(--muted);
+}

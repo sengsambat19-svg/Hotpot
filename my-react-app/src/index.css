@@ -1,0 +1,132 @@
+/* ============================================================================
+   Shared tokens + reset for the RedPot Express admin portal.
+   One source of truth — every component reads from here.
+   ============================================================================ */
+
+:root {
+  /* Brand */
+  --brand: #c8102e;
+  --brand-dark: #a00d26;
+  --brand-soft: #fdecef;
+  --brand-tint: #fff5f7;
+
+  /* Neutrals */
+  --ink: #1b2440;
+  --muted: #6b7285;
+  --line: #eef0f4;
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+
+  /* Status */
+  --green: #10b981;
+  --green-soft: #e8f7ee;
+  --green-ink: #128a3b;
+
+  /* Type */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Radius */
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; }
+
+.app {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+@media (max-width: 700px) {
+  .app { grid-template-columns: 1fr; }
+}
+
+/* ---------- Shared chrome ---------- */
+
+.page {
+  padding: 28px 32px;
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 4px;
+  letter-spacing: -0.2px;
+}
+
+.page-sub {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 24px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 20px;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: #4b5563;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.icon-btn .dot-red {
+  width: 8px;
+  height: 8px;
+  background: var(--brand);
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  border: 2px solid #fff;
+}
+
+.btn-brand {
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 11px 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-brand:hover { background: var(--brand-dark); color: #fff; }
+
+.btn-outline-brand {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
