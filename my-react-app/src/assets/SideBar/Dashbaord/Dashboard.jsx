@@ -12,7 +12,7 @@ import {
   Tooltip,
   Filler,
 } from "chart.js";
-import "./style/dashboard.css";
+import "./dashboard.css";
 
 ChartJS.register(
   CategoryScale,

@@ -1,4 +1,4 @@
-import "./style/product-table.css";
+import "./product-table.css";
 
 const ProductTable = () => {
   return (
